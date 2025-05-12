@@ -1,0 +1,94 @@
+:root {
+    /* You may customize these  */
+    --nal-display-font: sans-serif;
+    --nal-body-font: sans-serif;
+    --nal-code-font: monospace;
+
+    --nal-background: #FDFDFD;
+    --nal-foreground: #0E0E0E;
+}
+
+body {
+    font-family: var(--nal-body-font);
+
+    background-color: var(--nal-background);
+    color: var(--nal-foreground);
+}
+
+/* Content Layout */
+
+header {
+    text-align: center;
+}
+
+main {
+    max-width: 48em;
+    margin: 0 auto;
+}
+
+footer {
+    margin-top: 5rem;
+    padding: .25em .5em;
+    font-size: .9rem;
+    text-align: right;
+
+    color: color-mix(in srgb, var(--nal-foreground) 60%, var(--nal-background));
+}
+
+/* Headers */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--nal-display-font);
+    font-weight: bold;
+
+    padding: .5em 1em;
+
+    text-shadow: .02em .04em .05em rgba(0, 0, 0, 0.15), .05em .10em .18em rgba(0, 0, 0, 0.06);
+
+    &:not(:first-child) {
+        margin-top: 0.75em;
+    }
+}
+
+h1 {
+    font-size: 2.50em;
+}
+
+h2 {
+    font-size: 2.00em;
+}
+
+h3 {
+    font-size: 1.75em;
+}
+
+h4 {
+    font-size: 1.50em;
+}
+
+h5 {
+    font-size: 1.25em;
+}
+
+h6 {
+    font-size: 1.00em;
+}
+
+/* Body */
+
+p {
+    padding: .25em .5em;
+}
+
+ol, ul {
+    margin: .75em 0;
+    & > li > ol, & > li > ul {
+        margin: 0 0;
+    }
+}
+
+/* Codes */
+
+pre, code, kbd {
+    font-family: var(--nal-code-font);
+}
