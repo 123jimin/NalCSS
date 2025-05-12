@@ -1,0 +1,31 @@
+name: 'Deploy GitHub Pages'
+
+on:
+  push:
+    branches: ["main"]
+
+permissions:
+  contents: read
+  id-token: write
+  pages: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Setup Files
+      run: |
+        mkdir _site
+        cp -r css _site/css
+        cp -r html _site/html
+    - name: Upload Pages Artifact
+      uses: actions/upload-pages-artifact@v3
+    - name: Deploy GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
