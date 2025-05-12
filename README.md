@@ -1,5 +1,7 @@
 # NalCSS
 
+[Check out an example here.](https://123jimin.github.io/NalCSS/)
+
 **NalCSS** is a vanila CSS for styling simple HTML pages.
 
 ## How to Use
