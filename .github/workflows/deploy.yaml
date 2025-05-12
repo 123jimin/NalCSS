@@ -21,11 +21,13 @@ jobs:
       uses: actions/checkout@v4
     - name: Setup Files
       run: |
-        mkdir _site
-        cp -r css _site/css
-        cp -r html _site/html
+        mkdir deploy
+        cp -r css deploy/css
+        cp -r html deploy/html
     - name: Upload Pages Artifact
       uses: actions/upload-pages-artifact@v3
+      with:
+        path: deploy
     - name: Deploy GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v4
